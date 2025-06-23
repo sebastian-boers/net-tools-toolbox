@@ -1,17 +1,33 @@
-# net-tools-toolbox
-Dockerized Network Troubleshooting Toolkit
+# Project overview and usage documentation
 
-**Alternative 1**
+# 🧰 Net Tools Toolbox
 
-**Run from GHCR**
+A lightweight Docker image preloaded with essential network troubleshooting tools.
 
-docker run ghcr.io/sebastian-boers/net-tools-toolbox:latest
+## 🚀 Usage
 
+Run directly from GitHub Container Registry (GHCR):
 
+```bash
+docker run --rm -it --net=host ghcr.io/YOUR_USERNAME/net-tools-toolbox
+```
 
-**Alternative 2, build on local machine:**
+Or build locally:
 
-git clone https://github.com/sebastian-boers/net-tools-toolbox.git
-cd net-tools-toolbox
-docker build -t nettools-toolbox .
-docker run --rm -it nettools-toolbox
+```bash
+docker build -t net-tools-toolbox .
+docker run --rm -it --net=host net-tools-toolbox
+```
+
+## 🔧 Included Tools
+
+- ping, ip, traceroute, mtr
+- tcpdump, nmap, iperf3
+- dig, nslookup, ethtool
+- speedtest-cli, curl, wget
+
+## 📦 Features
+
+- No installation required on host
+- Reproducible and portable
+- Host networking mode for full visibility
