@@ -13,7 +13,7 @@ docker run --rm -it --net=host ghcr.io/sebastian-boers/net-tools-toolbox
 Or build locally:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/net-tools-toolbox.git
+git clone https://github.com/sebastian-boers/net-tools-toolbox.git
 cd net-tools-toolbox
 docker build -t net-tools-toolbox .
 docker run --rm -it --net=host net-tools-toolbox
