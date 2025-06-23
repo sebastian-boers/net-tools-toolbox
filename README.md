@@ -1,5 +1,3 @@
-# Project overview and usage documentation
-
 # Net Tools Toolbox
 
 A lightweight Docker image preloaded with essential network troubleshooting tools.
