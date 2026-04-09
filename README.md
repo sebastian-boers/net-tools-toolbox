@@ -1,16 +1,17 @@
-# Net Tools Toolbox
+# net-tools-toolbox
 
-A lightweight Docker image preloaded with essential network troubleshooting tools.
+Docker image with the network tools I actually use.  
+Built to avoid installing/debugging tools on random hosts and to keep a consistent workflow.
 
-## Usage
+---
 
-Run directly from GitHub Container Registry (GHCR):
+## usage
 
 ```bash
 docker run --rm -it --net=host ghcr.io/sebastian-boers/net-tools-toolbox
 ```
 
-Or build locally:
+### Local build:
 
 ```bash
 git clone https://github.com/sebastian-boers/net-tools-toolbox.git
@@ -19,15 +20,53 @@ docker build -t net-tools-toolbox .
 docker run --rm -it --net=host net-tools-toolbox
 ```
 
-## Included Tools
+---
 
-- ping, ip, traceroute, mtr
-- tcpdump, nmap, iperf3
-- dig, nslookup, ethtool
-- speedtest-cli, curl, wget
+### what’s in it
 
-## Features
+#### path / reachability
+- ping
+- traceroute
+- mtr
 
-- No installation required on host
-- Reproducible and portable
-- Host networking mode for full visibility
+#### throughput
+- iperf3
+- speedtest-cli
+
+#### dns / http
+- dig, nslookup
+- curl, wget
+
+#### inspection
+- tcpdump
+
+#### misc
+- ip
+- nmap
+- ethtool
+
+---
+
+### how I use it
+
+#### Not trying to cover everything — just the common flow:
+- can I reach it? → ping
+- where does it break? → mtr
+- is it slow or just broken? → iperf3 / speedtest-cli
+- dns or not? → dig
+- what’s actually on the wire? → tcpdump
+
+---
+
+#### notes
+- run with --net=host so everything targets the host network stack
+- container is just a wrapper — not the thing being debugged
+- tcpdump is useful here since it sees real traffic
+- ethtool is mostly for edge cases (bare metal, nic issues)
+
+---
+
+#### why
+
+Mostly convenience.
+I got tired of jumping between different environments with different tools (or none at all).
