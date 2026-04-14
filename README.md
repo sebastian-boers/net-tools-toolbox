@@ -54,7 +54,7 @@ docker run --rm -it --net=host net-tools-toolbox
 - where does it break? → mtr
 - is it slow or just broken? → iperf3 / speedtest-cli
 - dns or not? → dig
-- what’s actually on the wire? → tcpdump
+- debug traffic output? → tcpdump
 
 ---
 
@@ -69,4 +69,4 @@ docker run --rm -it --net=host net-tools-toolbox
 #### why
 
 Mostly convenience.
-I got tired of jumping between different environments with different tools (or none at all).
+a standardized network troubleshooting tool-kit is always handy
